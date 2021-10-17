@@ -1,4 +1,4 @@
 {:paths ["src/main/clj"]
  :deps {net.cgrand/macrovich {:mvn/version "0.2.1"}
-        dsann/macro-helpers {:git/sha "5c55d46" :tag "v1"}}}
+        dsann/macro-helpers {:git/sha "5c55d46" :git/tag "v1"}}}
 
