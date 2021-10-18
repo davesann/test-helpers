@@ -5,8 +5,12 @@ Wrappers on clojure.test - because I prefer writing them this way.
 ```clojure
 (require '[dsann.test :refer [are is throws])
 
+(defn some-predicate? [x y]
+    ...)
+
 (deftest some-test
   (is = 1 1)
+  (is some-predicate? a b)
   (are =
     1 1
     2 3
