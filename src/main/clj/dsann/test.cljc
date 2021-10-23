@@ -1,8 +1,9 @@
 (ns dsann.test
   (:require
-    [dsann.macros.helpers :refer [assert-args]]
+    [clojure.test         :as    t]
+    [clojure.template     :refer [do-template]]
     [net.cgrand.macrovich :as macros]
-    [clojure.test         :as    t])
+    [dsann.macros.helpers :refer [assert-args]])
   ; cljs must self refer macros
   #?(:cljs (:require-macros
              [dsann.test :refer [are]])))
@@ -16,7 +17,11 @@
   (defmacro is [f arg1 arg2]
     `(t/is (~f ~arg1 ~arg2)))
 
-  (defmacro throws [c form]
+  (defmacro throws [& args]
+    (assert-args (even? (count args)) "an even number of forms")
     (let [thrown-sym 'thrown?]
-      `(t/is (~thrown-sym ~c ~form)))))
+      `(do-template
+         [ex form]
+         (t/is (~thrown-sym ex form))
+         ~@args))))
 
