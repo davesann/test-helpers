@@ -34,6 +34,6 @@ Wrappers on clojure.test - because I prefer writing them this way.
 
 ## Git Tags
 
-* v1: *7d61d7c*f4b8d738cda3b330c29b62574e05addb8
-* v2: *0cfda65*9ee4c829245995ce57b276b684a4c3dad
-* v3: *c4e375c*03f6dc18487c0e8b5d6904a284c91896d 
+* v1: **7d61d7c**f4b8d738cda3b330c29b62574e05addb8
+* v2: **0cfda65**9ee4c829245995ce57b276b684a4c3dad
+* v3: **c4e375c**03f6dc18487c0e8b5d6904a284c91896d 
