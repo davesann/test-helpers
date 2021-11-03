@@ -24,15 +24,16 @@ Wrappers on clojure.test - because I prefer writing them this way.
 
 ```clojure
   io.github.davesann/test-helpers {:git/sha "7d61d7c" :git/tag "v1"}
+
+  ;; added multiple args to throws - but broke cljs
   io.github.davesann/test-helpers {:git/sha "0cfda65" :git/tag "v2"}
+ 
+  ;; fix for cljs
+  io.github.davesann/test-helpers {:git/sha "c4e375c" :git/tag "v3"}
 ```
 
 ## Git Tags
 
-* v1:
-    * 7d61d7cf4b8d738cda3b330c29b62574e05addb8
-    * 7d61d7c
-* v2
-    * 0cfda659ee4c829245995ce57b276b684a4c3dad
-	* 0cfda65
-
+* v1: *7d61d7c*f4b8d738cda3b330c29b62574e05addb8
+* v2: *0cfda65*9ee4c829245995ce57b276b684a4c3dad
+* v3: *c4e375c*03f6dc18487c0e8b5d6904a284c91896d 
