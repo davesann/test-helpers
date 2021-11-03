@@ -1,7 +1,7 @@
 (ns dsann.test
   (:require
     [clojure.test         :as    t]
-    [clojure.template     :refer [do-template]]
+    #?(:clj [clojure.template     :refer [do-template]])
     [net.cgrand.macrovich :as macros]
     [dsann.macros.helpers :refer [assert-args]])
   ; cljs must self refer macros
