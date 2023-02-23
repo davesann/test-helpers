@@ -1,4 +1,24 @@
 {:paths ["src/main/clj"]
  :deps {net.cgrand/macrovich {:mvn/version "0.2.1"}
-        io.github.davesann/macro-helpers {:git/sha "5c55d46" :git/tag "v1"}}}
+        io.github.davesann/macro-helpers {:git/sha "5c55d46" :git/tag "v1"}}
+ :aliases {
+           :repl-deps {:extra-paths ["src/repl/clj"]}
+           :test-deps {:extra-paths ["src/test/clj"]}
 
+           :nrepl {:extra-deps { cider/cider-nrepl            {:mvn/version "0.30.0"}
+                                 cider/piggieback             {:mvn/version "0.5.3"}
+                                 nrepl/nrepl                  {:mvn/version "1.0.0"}}
+                   :main-opts ["-m" "nrepl.cmdline"
+                               "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+           :test-clj {:extra-deps {lambdaisland/kaocha      {:mvn/version "1.77.1236"}
+                                   ;; required if editing with neovim
+                                   com.nextjournal/beholder {:mvn/version "1.0.2"}} 
+                      :main-opts  ["-m" "kaocha.runner" "--config-file" "config/koacha-config.edn"]
+                      :exec-fn    kaocha.runner/exec-fn
+                      :exec-args  {:config-file "koacha-config.edn"}}
+
+           :test-cljs {:extra-deps  {olical/cljs-test-runner         {:mvn/version "3.8.0"}
+                                     org.clojure/clojurescript       {:mvn/version "1.11.60"}}
+                        ;; -M option only
+                        :main-opts ["-m" "cljs-test-runner.main"]}}}
