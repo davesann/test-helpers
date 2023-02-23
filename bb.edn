@@ -20,7 +20,7 @@
                              (api/quickdoc {:toc true
                                             :git/branch  "main"
                                             :github/repo "https://github.com/davesann/let-map"
-                                            :source-paths ["src/main/clj" "src/test/clj"]})}
+                                            :source-paths ["src/main/clj"]})}
 
          ppcp {:doc "Pretty print the classpath - add (run 'ppcp) in a task to see it's classpath"
                :requires [[babashka.classpath :refer [get-classpath]]
