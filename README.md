@@ -18,22 +18,20 @@ Wrappers on clojure.test - because I prefer writing them this way.
   (throws
      java.lang.Exception (some code)))
      Some.Exception      (some other code))) ;; multiple args here since v2
+``` 
+## Usage
+
+in cljc:
+```
+  (:require 
+    #?(:clj  [clojure.test :refer [deftest testing]]
+	   :cljs [cljs.test    :refer [deftest testing]])   
+    [dsann.test :refer [is are throws]])
 ```
 
 ## Deps
 
 ```clojure
-  io.github.davesann/test-helpers {:git/sha "7d61d7c" :git/tag "v1"}
-
-  ;; added multiple args to throws - but broke cljs
-  io.github.davesann/test-helpers {:git/sha "0cfda65" :git/tag "v2"}
- 
-  ;; fix for cljs
-  io.github.davesann/test-helpers {:git/sha "c4e375c" :git/tag "v3"}
+io.github.davesann/test-helpers {:git/tag "v4" :git/sha "14a1f7f"}
 ```
 
-## Git Tags
-
-* v1: **7d61d7c**f4b8d738cda3b330c29b62574e05addb8
-* v2: **0cfda65**9ee4c829245995ce57b276b684a4c3dad
-* v3: **c4e375c**03f6dc18487c0e8b5d6904a284c91896d 
