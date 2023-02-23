@@ -1,16 +1,15 @@
 (ns dsann.test-cljc-test
   (:require
-    #?@(:clj  [[clojure.test    :refer [deftest testing]]
-               [dsann.test      :refer [is are throws]]]
-        :cljs [[cljs.test       :refer [deftest testing]]
-               [dsann.cljs-test :refer [is are throws]]]))
+    #?@(:clj  [[clojure.test    :refer [deftest testing]]]
+        :cljs [[cljs.test       :refer [deftest testing]]])
+    [dsann.test :refer [is are throws]])
   #?(:clj (:import [clojure.lang ExceptionInfo])))  
 
 
 (defn pred? [x y] (> x y))
 
 (defn this-throws []
-  #?(:clj (throw (java.lang.Exception.))
+  #?(:clj  (throw (java.lang.Exception.))
      :cljs (throw (js/Error.))))
 
 (deftest testing-tests

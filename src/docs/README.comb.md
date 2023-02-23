@@ -21,33 +21,13 @@ Wrappers on clojure.test - because I prefer writing them this way.
 ``` 
 ## Usage
 
-from clj  
-```clojure
-(:require [dsann.test :refer [is are throws]])
+in cljc:
 ```
-
-from cljs
-```clojure
-(:require [dsann.cljs-test :refer [is are throws]])
+  (:require 
+    #?(:clj  [clojure.test :refer [deftest testing]]
+	   :cljs [cljs.test    :refer [deftest testing]])   
+    [dsann.test :refer [is are throws]])
 ```
-
-from cljc 
-```clojure
-(:require #?(:clj  [dsann.test :refer [is are throws]]
-             :cljs [dsann.cljs-test :refer [is are throws]]))
-```
-
-from clj generically with clojure.test
-```clojure
-  (:require
-    #?@(:clj  [[clojure.test    :refer [deftest testing]]
-               [dsann.test      :refer [is are throws]]]
-        :cljs [[cljs.test       :refer [deftest testing]]
-               [dsann.cljs-test :refer [is are throws]]]))
-```
-
-I wanted to have a generic include - but this seems hard (impossible?) when using a cljs lib in a macro expansion. 
-So I had to split the namespaces.
 
 ## Deps
 

@@ -1,6 +1,6 @@
 (ns dsann.test-test
   (:require
-    [clojure.test :as t :refer [deftest testing]]
+    [clojure.test :refer [deftest testing]]
     [dsann.test   :as dt]))
 
 (defn pred? [x y] (> x y))

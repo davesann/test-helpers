@@ -1,11 +1,9 @@
 (ns dsann.test-cljs-test
   (:require
-    [cljs.test :as t :refer [deftest testing]]
-    [dsann.cljs-test :refer [is are throws]]))
-
+    [cljs.test  :refer [deftest testing]]
+    [dsann.test :refer [is are throws]]))
 
 (defn pred? [x y] (> x y))
-
 
 (deftest testing-tests
   (testing "dsann.test.is"
